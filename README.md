@@ -1,3 +1,6 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# Buscador de precios de videojuegos.
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+## Requerimientos
+
+* Redis
+* Node.js
