@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="es" ng-app="videojuegos">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jugle | Buscador de precios de videojuegos</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css" />
+    <script src="js/core.js"></script>
+  </head>
+  <body ng-controller="mainController">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row">
+          <div class="columns">
+            <h1>Jugle</h1>
+            <h2>Buscador de precios de videojuegos</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-2 columns">
+            <input ng-model="texto" type="text" placeholder="Ingrese nombre de juego" />
+          </div>
+          <div class="large-2 columns">
+            <select ng-model="plataforma" ng-options="plataforma for plataforma in plataformas">
+              <option value=''>Cualquiera</option>
+            </select>
+          </div>
+          <div class="large-2 columns">
+            <button class="tiny" ng-click="buscar()" ng-disabled="loading">Buscar</button>
+          </div>
+          <div class="large-2 columns">
+            <div ng-show="loading">
+              <img src="img/ajax.gif" /> Buscando...
+            </div>
+          </div>
+        </div>
+        <hr/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="grid1" ui-grid="gridOptions"></div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <h3>Importante</h3>
+      <ul>
+        <li>Este sitio no procesa pagos ni realiza compras, sólo indexa las distintas opciones dado un nombre de juego.</li>
+        <li>Este sitio utiliza los datos publicados por las distintas tiendas en sus respectivas páginas web, por lo que los precios mostrados son sólo referenciales y no somos responsables de ellos.</li>
+        <li>Las busquedas son almacenadas en caché por 36 horas. Si no hay caché creada para un juego, la busqueda tardará más en encontrar resultados.</li>
+        <li>Debido a la caché, es posible que un precio mostrado en el sitio no sea el mismo que el mostrado en la tienda seleccionada.</li>
+        <li>Si representa a una tienda, y no desea aparecer en este sitio, por favor, <a href="mailto:juglebuscador@gmail.com">contáctenos.</a></li>
+      </ul>
+      <a href="https://github.com/fikoborquez/jugle">GitHub</a>
+    </div>
+  </body>
+</html>

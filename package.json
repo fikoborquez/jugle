@@ -1,0 +1,18 @@
+{
+  "name": "Videojuegos",
+  "version": "0.0.1",
+  "description": "Cotizador de precios de videojuegos en Chile.",
+  "main": "server.js",
+  "author": "Fiko Bórquez",
+  "dependencies": {
+    "async": "^1.4.2",
+    "cheerio": "latest",
+    "express": "^4.13.3",
+    "redis": "^1.0.0",
+    "request": "latest"
+  },
+  "devDependencies": {
+    "expect2": "^0.4.0",
+    "mocha": "^2.2.5"
+  }
+}
