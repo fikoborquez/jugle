@@ -27,50 +27,71 @@
   </head>
   <body ng-controller="mainController">
     <div class="row">
-      <div class="large-12 columns">
-        <div class="row">
-          <div class="columns">
-            <h1>Jugle</h1>
-            <h2>Buscador de precios de videojuegos</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-2 columns">
-            <input ng-model="texto" type="text" placeholder="Ingrese nombre de juego" />
-          </div>
-          <div class="large-2 columns">
-            <select ng-model="plataforma" ng-options="plataforma for plataforma in plataformas">
-              <option value=''>Cualquiera</option>
-            </select>
-          </div>
-          <div class="large-2 columns">
-            <button class="tiny" ng-click="buscar()" ng-disabled="loading">Buscar</button>
-          </div>
-          <div class="large-2 columns">
-            <div ng-show="loading">
-              <img src="img/ajax.gif" /> Buscando...
+      <div class="small-12 columns">
+        <h1>Jugle</h1>
+        <h2>Buscador de precios de videojuegos</h2>
+      </div>
+    </div>
+    <form>
+      <div class="row" style="margin-bottom:5px">
+        <div class="small-9 large-4 columns">
+          <div class="row">
+            <div class="small-4 columns">
+              <label class="left" for='texto'>
+                Juego:
+              </label>
+            </div>
+            <div class="small-8 columns">
+                <input ng-model="texto" id="texto" type="text" placeholder="Ingrese nombre de juego" />
             </div>
           </div>
         </div>
-        <hr/>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
+      <div class="row" style="margin-bottom:5px">
+        <div class="small-9 large-4 columns">
+          <div class="row">
+            <div class="small-4 columns">
+              <label class="left" for="plataforma">
+                Plataforma:
+              </label>
+            </div>
+            <div class="small-8 columns">
+              <select ng-model="plataforma" ng-options="plataforma for plataforma in plataformas" id="plataforma">
+                <option value=''>Cualquiera</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-4 columns">
+          <button class="tiny" ng-click="buscar()" ng-disabled="loading">Buscar</button>
+        </div>
+        <div class="small-8 columns">
+          <div ng-show="loading">
+            <img src="img/ajax.gif" /> Buscando...
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row" style="margin-bottom:5px">
+      <div class="small-12 columns">
         <div id="grid1" ui-grid="gridOptions"></div>
       </div>
     </div>
-    <br/>
-    <div class="row">
-      <h3>Importante</h3>
-      <ul>
-        <li>Este sitio no procesa pagos ni realiza compras, sólo indexa las distintas opciones dado un nombre de juego.</li>
-        <li>Este sitio utiliza los datos publicados por las distintas tiendas en sus respectivas páginas web, por lo que los precios mostrados son sólo referenciales y no somos responsables de ellos.</li>
-        <li>Las busquedas son almacenadas en caché por 36 horas. Si no hay caché creada para un juego, la busqueda tardará más en encontrar resultados.</li>
-        <li>Debido a la caché, es posible que un precio mostrado en el sitio no sea el mismo que el mostrado en la tienda seleccionada.</li>
-        <li>Si representa a una tienda, y no desea aparecer en este sitio, por favor, <a href="mailto:juglebuscador@gmail.com">contáctenos.</a></li>
-      </ul>
-      <a href="https://github.com/fikoborquez/jugle">GitHub</a>
+    <div class="row" style="margin-top:20px">
+      <div class="small-12 columns">
+        <h3>Importante</h3>
+        <ul>
+          <li>El objetivo de este sitio es ayudar a la gente a comprar un videojuego al mejor precio disponible.</li>
+          <li>Este sitio no procesa pagos ni realiza compras, sólo indexa las distintas opciones dado un nombre de juego.</li>
+          <li>Este sitio utiliza los datos publicados por las distintas tiendas en sus respectivos sitios web, por lo que los precios que aquí aparecen son sólo referenciales y no somos responsables de ellos.</li>
+          <li>Las búsquedas son almacenadas en caché por 36 horas. Si no hay caché creada para un juego, la búsqueda tardará más en encontrar resultados.</li>
+          <li>Debido a la caché, es posible que un precio mostrado en el sitio no sea el mismo que el mostrado en la tienda seleccionada.</li>
+          <li>Si representa a una tienda, y no desea aparecer en este sitio, por favor, <a href="mailto:juglebuscador@gmail.com">contáctenos.</a></li>
+        </ul>
+        <a href="https://github.com/fikoborquez/jugle">GitHub</a> | <a href="mailto:juglebuscador@gmail.com">Contacto</a>
+      </div>
     </div>
   </body>
 </html>
